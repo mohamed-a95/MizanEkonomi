@@ -5,6 +5,11 @@ import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { scrollToSection } from "@/lib/scroll-to-section";
 import { FaFacebookF, FaInstagram, FaLinkedinIn } from "react-icons/fa";
+import {
+  FaFileInvoiceDollar,
+  FaBookOpen,
+  FaMoneyCheckAlt,
+} from "react-icons/fa";
 
 const navItems = [
   { label: "Hem", href: "#home" },
@@ -15,32 +20,31 @@ const navItems = [
 
 const services = [
   {
-    title: "Redovisning",
+    title: "Skattehantering och Deklaration",
     description:
-      "Vi tar hand om din löpande bokföring, bokslut och årsredovisning.",
-    icon: "📊",
+      "Vi hjälper företag att hantera skatter och deklarationer smidigt och korrekt.",
+    icon: <FaFileInvoiceDollar className="text-4xl mb-4" />,
+  },
+  {
+    title: "Bokföring och Årsredovisning",
+    description:
+      "Vi säkerställer korrekt bokföring och årsredovisning enligt gällande regler.",
+    icon: <FaBookOpen className="text-4xl mb-4" />,
   },
   {
     title: "Lönehantering",
     description:
-      "Vi hanterar löner, arbetsgivardeklarationer och kontrolluppgifter.",
-    icon: "💼",
-  },
-  {
-    title: "Skatt & Deklaration",
-    description:
-      "Vi hjälper dig med skatteplanering och deklaration för bästa resultat.",
-    icon: "📋",
+      "Vi hanterar löneutbetalningar och rapportering med precision och effektivitet.",
+    icon: <FaMoneyCheckAlt className="text-4xl mb-4" />,
   },
 ];
-
 const contactInfo = {
   emails: [
-    "info@mizanekonomi.se",
-    "redovisning@mizanekonomi.se",
-    "skatt@mizanekonomi.se",
+    "samrand.faik@mizanekonomi.se",
+    "shuay.abokor@mizanekonomi.se",
+    "rahim.yusuf@mizanekonomi.se",
   ],
-  phones: ["+46 700 97 3993", "+46 725 62 5123", "+46 737 89 4456"],
+  phones: ["+46 700 97 3993", "+46 725 62 5123", "+46 707 96 3457"],
 };
 
 const socialLinks = [
@@ -68,19 +72,21 @@ export default function LandingPage() {
     <div className="min-h-screen bg-background">
       {/* Header */}
       <header className="sticky top-0 z-50 shadow-md bg-white">
-        <div className="container mx-auto flex items-center justify-between h-20 relative">
+        <div className="container mx-auto flex items-center justify-between h-24 relative">
           {/* Logo Container */}
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.5 }}
             className="w-[40%] h-full flex items-center justify-start relative z-10 pl-1"
           >
-            <img 
-              src="/assets/Mizan ekonomi  (5) (1).png" 
-              alt="Mizan Ekonomi" 
-              className="h-[65%] w-full object-cover" 
-            />
+            <a href="/" className="h-full w-full flex items-center">
+              <img
+                src="/assets/Mizan ekonomi  (5) (1).png"
+                alt="Mizan Ekonomi"
+                className="h-[100%] w-[60%] object-cover"
+              />
+            </a>
           </motion.div>
 
           {/* Desktop Navigation - only right padding */}
@@ -263,7 +269,8 @@ export default function LandingPage() {
             Kontakta oss
           </h2>
           <p className="mt-4 text-lg text-[rgb(215,175,107)]">
-            Nå oss via mejl eller telefon:
+            Välkommen att kontakta oss för förstklassig service inom
+            redovisning, skatt och lönehantering.{" "}
           </p>
 
           <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-6">
@@ -333,10 +340,10 @@ export default function LandingPage() {
           {/* Copyright and Org Number */}
           <div className="mt-16 pt-8 border-t border-[rgb(215,175,107)]/20 text-center">
             <p className="text-[rgb(215,175,107)] text-sm">
-              Org.nr: 559339-7242
+              Org.nr: 559464-3800
             </p>
             <p className="text-[rgb(215,175,107)] text-sm mt-2">
-              © {new Date().getFullYear()} Mizan Ekonomi. Alla rättigheter
+              © {new Date().getFullYear()} Mizan Ekonomi AB. Alla rättigheter
               förbehållna.
             </p>
           </div>
